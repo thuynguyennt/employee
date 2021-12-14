@@ -3,10 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './crud/register/register.component';
 
 const routes: Routes = [
+  // {
+  //   path: 'crud',
+  //   loadChildren: () => import('./crud/crud.module').then(mod => mod.CrudModule),
+  // },
   {
-    path: 'crud',
-    loadChildren: () => import('./crud/crud.module').then(mod => mod.CrudModule),
-  },
+    path: 'Register',
+    component: RegisterComponent
+  }, 
+  { path: '', redirectTo: 'Register', pathMatch: 'full' },
+  { path: '**', redirectTo: 'Register' },
 
 ];
 

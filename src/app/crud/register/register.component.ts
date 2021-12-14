@@ -14,14 +14,14 @@ export class RegisterComponent implements OnInit {
 
   validForm!: FormGroup;
   employee: Employee = new Employee();
-  isActive= false;
+  isActive = false;
 
   constructor(private fb: FormBuilder,
-              private router: Router,
-              private employeeService: EmployeeService) { }
+    private router: Router,
+    private employeeService: EmployeeService) { }
 
   ngOnInit(): void {
-    this.validForm = this.fb.group ({
+    this.validForm = this.fb.group({
       name: new FormControl(this.employee.name, [
         Validators.required,
       ]),
@@ -51,14 +51,14 @@ export class RegisterComponent implements OnInit {
 
   get email() {
     return this.validForm.get('email');
-}
+  }
 
-get phone() {
-  return this.validForm.get('phone');
-}
+  get phone() {
+    return this.validForm.get('phone');
+  }
 
-get password() {
-  return this.validForm.get('password');
-}
+  get password() {
+    return this.validForm.get('password');
+  }
 
 }
