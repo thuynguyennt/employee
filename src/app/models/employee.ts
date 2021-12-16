@@ -1,6 +1,9 @@
 export class Employee {
-    name!: String;
-    email!: String;
-    phone!: String;
-    password!: String
+    id!: string;
+    name!: string;
+    email!: string;
+    phone!: string;
+    password!: string;
+    designation!: string;
+    age!: Number;
 }

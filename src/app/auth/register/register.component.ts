@@ -14,7 +14,6 @@ export class RegisterComponent implements OnInit {
 
   validForm!: FormGroup;
   employee: Employee = new Employee();
-  isActive = false;
 
   constructor(private fb: FormBuilder,
     private router: Router,
@@ -44,10 +43,11 @@ export class RegisterComponent implements OnInit {
     this.employee.password = value.password;
 
     this.employeeService.createEmployee(this.employee).subscribe(res => {
-      this.isActive = true;
-      this.router.navigate(['./login']);
+      this.router.navigate(['./auth']);
     })
   }
+
+  get f() { return this.validForm.controls; }
 
   get email() {
     return this.validForm.get('email');

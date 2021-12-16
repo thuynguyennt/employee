@@ -8,17 +8,17 @@
     <div class="form-group">
         <label style="margin-left: -420px;">Email</label>
         <input type="text" name="email" formControlName="email"> 
-        <span *ngIf= "isActive" style="color: red;">Chưa đúng định dạng email</span>
+        <span *ngIf="f['email'].errors" style="color: red;">Chưa đúng định dạng email</span>
     </div>
     <div class="form-group">
         <label style="margin-left: -420px;">Phone</label>
         <input type="text" name="phone" formControlName="phone">  
-        <div *ngIf= "isActive"   style="color: red;">Số điện thoại chưa đúng định dạng</div>  
+        <span *ngIf="f['phone'].errors"  style="color: red;">Số điện thoại chưa đúng định dạng</span>  
     </div>
     <div class="form-group">
         <label style="margin-left: -420px;">Password</label>
         <input type="text" name="password" formControlName="password"> 
-        <span *ngIf= "isActive"  style="color: red;">Ít nhất 6 kí tự bao gồm chữ hoa, thường, số</span>
+        <span *ngIf="f['password'].errors"  style="color: red;">Ít nhất 6 kí tự bao gồm chữ hoa, thường, số</span>
     </div>
         <input id="submit" type="submit" name="submit" value="Register">
 </form>          

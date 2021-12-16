@@ -1,2 +1,57 @@
+<div class="wrapper">
+    <!--Top menu -->
+    <div class="sidebar">
+       <!--profile image & text-->
+       <div class="profile">
+        <img src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-cartoon-cute-q-version-hand-painted-girl-avatar-tooth-png-image_4022760.jpg">
+        <h3>Anamika Roy</h3>
+        <p>Designer</p>
+    </div>
+        <!--menu item-->
+
+        <ul>
+            
+            <li>
+                <a href="#">
+                    <span class="icon"><i class="fas fa-desktop"></i></span>
+                    <span class="item">My Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/home/employees']" routerLinkActive="router-link-active" >
+                    <span class="icon"><i class="fas fa-user-friends"></i></span>
+                    <span class="item">Employees</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                    <span class="item">Infomation</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><i class="fas fa-database"></i></span>
+                    <span class="item">Development</span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/auth/login']" routerLinkActive="router-link-active" >
+                    <span class="icon"><i class="fas fa-chart-line"></i></span>
+                    <span class="item">Login</span>
+                </a>
+            </li>
+        
+            <li>
+                <a href="#">
+                    <span class="icon"><i class="fas fa-cog"></i></span>
+                    <span class="item">Log out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
 <router-outlet></router-outlet>
 

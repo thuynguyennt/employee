@@ -1,18 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RegisterComponent } from './crud/register/register.component';
+
 
 const routes: Routes = [
-  // {
-  //   path: 'crud',
-  //   loadChildren: () => import('./crud/crud.module').then(mod => mod.CrudModule),
-  // },
   {
-    path: 'Register',
-    component: RegisterComponent
-  }, 
-  { path: '', redirectTo: 'Register', pathMatch: 'full' },
-  { path: '**', redirectTo: 'Register' },
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(mod => mod.AuthModule),
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then(mod => mod.HomeModule),
+  },
+  // {
+  //   path: 'login',
+  //   component: LoginComponent
+  // }, 
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  // { path: '**', redirectTo: 'login' },
 
 ];
 

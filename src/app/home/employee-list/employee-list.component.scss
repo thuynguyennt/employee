@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+.table {
+    margin-left: 20%;
+    margin-top: 5%;
+}@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 *{
     list-style: none;
@@ -100,4 +103,19 @@ body{
 .wrapper .sidebar ul li a:hover:before,
 .wrapper .sidebar ul li a.active:before{
     display: block;
+}
+h1 {
+    margin-left: 20%;
+    margin-top: 20px;
+    font-size: 36px;
+    font-weight: bold;
+}
+.btn-sm {
+    margin-left: 20%;
+    border: 1px solid green;
+    background: green;
+    color: white;
+    padding: 10px;
+    position: relative;
+    top: 10px;
 }

@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Employee } from '../models/employee';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
 
 @Injectable()
 export class EmployeeService {
-    private employeeUrl ='http://localhost:3000/api/register';
+    private employeeUrl ='http://localhost:3000/api//register';
     private employeeLogin = 'http://localhost:3000/api/login';
+    private employeesListUrl = 'http://localhost:3000/employee';
+    private employeesDelete = 'http://localhost:3000/employee/destroy';
+
     private token = "Bearer "+localStorage.getItem("token");
 
     private httpAuthorization = {
@@ -19,7 +22,18 @@ export class EmployeeService {
     constructor( private http: HttpClient ) { }
 
     createEmployee(employee: Employee): Observable<Object> {
-        return this.http.post(`${this.employeeUrl}`, employee, this.httpAuthorization);
+        return this.http.post(`${this.employeeUrl}`, employee);
     }
 
+    loginEmployee(employee: Employee): Observable<Object> {
+        return this.http.post(`${this.employeeLogin}`, employee);
+    }
+
+    getEmployeesList() {
+        return this.http.get(`${this.employeesListUrl}`);
+      }
+
+    deleteEmployee() {
+        return this.http.delete(`${this.employeesDelete}`);
+    }
 }
