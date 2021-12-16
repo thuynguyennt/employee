@@ -43,7 +43,8 @@ export class RegisterComponent implements OnInit {
     this.employee.password = value.password;
 
     this.employeeService.createEmployee(this.employee).subscribe(res => {
-      this.router.navigate(['./auth']);
+      console.log(res);
+      this.router.navigate(['./auth/login']);
     })
   }
 

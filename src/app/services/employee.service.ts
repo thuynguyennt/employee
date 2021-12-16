@@ -12,6 +12,8 @@ export class EmployeeService {
     private employeeLogin = 'http://localhost:3000/api/login';
     private employeesListUrl = 'http://localhost:3000/employee';
     private employeesDelete = 'http://localhost:3000/employee/destroy';
+    private employeeAdd = 'http://localhost:3000/employee/store';
+    private employeeUpdate = 'http://localhost:3000/employee/update';
 
     private token = "Bearer "+localStorage.getItem("token");
 
@@ -33,7 +35,15 @@ export class EmployeeService {
         return this.http.get(`${this.employeesListUrl}`);
       }
 
-    deleteEmployee() {
-        return this.http.delete(`${this.employeesDelete}`);
+    deleteEmployee(id: string) {
+        return this.http.delete(`${this.employeesDelete}?id=${id}`);
+    }
+
+    storeEmployee(employee: Employee) {
+        return this.http.post(`${this.employeeAdd}`, employee);
+    }
+
+    updateEmployee(id:string, employee: Employee) {
+        return this.http.put(`${this.employeeUpdate}?id=${id}`,employee)
     }
 }

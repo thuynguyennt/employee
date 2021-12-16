@@ -5,6 +5,7 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InfoComponent } from './info/info.component';
 import { AddEditComponent } from './add-edit/add-edit.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { AddEditComponent } from './add-edit/add-edit.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    
+    ReactiveFormsModule
   ]
 })
 export class HomeModule { }

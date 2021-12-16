@@ -21,9 +21,8 @@ export class EmployeeListComponent implements OnInit {
     } );
   }
   onDelete(id:string) {
-    this.employeeService.deleteEmployee().subscribe(data => {
-      console.log(data);
-    })
+    this.employeeService.deleteEmployee(id).subscribe(() => 
+      this.employees = this.employees.filter(x => x.id == id));
   }
   
 }

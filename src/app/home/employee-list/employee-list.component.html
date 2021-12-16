@@ -1,14 +1,14 @@
 <h1>Employees</h1>
-<a  class="btn btn-sm btn-success mb-2">Add Employee</a>
+<a [routerLink]="['/add-edit']" routerLinkActive="router-link-active"   class="btn btn-sm btn-success mb-2">Add Employee</a>
 
 <table class="table table-striped">
     <thead>
         <tr>
-            <th style="width: 10%">Name</th>
+            <th style="width: 20%">Name</th>
             <th style="width: 10%">Designation</th>
-            <th style="width: 10%">Email</th>
+            <th style="width: 20%">Email</th>
             <th style="width: 10%">Phone</th>
-            <th style="width: 10%">Age</th>
+            <th style="width: 20%">Age</th>
         </tr>
     </thead>
     <tbody>
@@ -17,10 +17,10 @@
             <td>{{employee.designation}}</td>
             <td>{{employee.email}}</td>
             <td>{{employee.phone}}</td>
-            <td>{{employee.age}}</td>
+            <td style="position: relative; left: 20px;">{{employee.age}}</td>
             <td style="white-space: nowrap">
-                <a routerLink="" class="btn btn-sm btn-primary mr-1">Edit</a>
-                <button class="btn btn-sm btn-danger btn-delete-user" >
+                <a routerLink="/add-edit" class="btn btn-sm btn-primary mr-1" >Edit</a>
+                <button class="btn btn-sm btn-danger btn-delete-user" onclick="onDelete(employee.id)">
                     <span >Delete</span>
                 </button>
             </td>
