@@ -6,6 +6,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { InfoComponent } from './info/info.component';
 import { AddEditComponent } from './add-edit/add-edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgChartsModule } from 'ng2-charts';
+// import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgChartsModule
+    // ChartsModule
   ]
 })
 export class HomeModule { }

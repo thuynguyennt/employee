@@ -1,4 +1,4 @@
-<div>
+<div style="width: 50%; margin-left: 30%;" >
     <div style="display: block">
       <!-- <canvas baseChart
               [datasets]="barChartData"
@@ -7,5 +7,10 @@
               [legend]="barChartLegend"
               [chartType]="barChartType">
       </canvas> -->
+      <canvas baseChart
+        [data]="polarAreaChartData"
+        [legend]="polarAreaLegend"
+        [type]="polarAreaChartType">
+    </canvas>
     </div>
   </div>

@@ -28,6 +28,7 @@
         <label style="margin-left: -420px;">Age</label>
         <input type="text" name="age" formControlName="age" > 
     </div>
-        <input id="submit" type="submit" name="submit" value="Add">
+        <input id="submit" type="submit" *ngIf="isActive" name="submit" value="Add">
+        <input id="submit" type="submit" *ngIf="!isActive" name="submit" value="Edit">
 </form>          
 

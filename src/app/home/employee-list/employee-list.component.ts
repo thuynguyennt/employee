@@ -20,9 +20,11 @@ export class EmployeeListComponent implements OnInit {
       this.employees = res.response;
     } );
   }
-  onDelete(id:string) {
-    this.employeeService.deleteEmployee(id).subscribe(() => 
-      this.employees = this.employees.filter(x => x.id == id));
+  onDelete(data:any) {
+    console.log(data);
+    
+    this.employeeService.deleteEmployee(data._id).subscribe(() => 
+      this.employees = this.employees.filter(x => x._id !== data._id));
   }
   
 }

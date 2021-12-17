@@ -19,8 +19,8 @@
             <td>{{employee.phone}}</td>
             <td style="position: relative; left: 20px;">{{employee.age}}</td>
             <td style="white-space: nowrap">
-                <a routerLink="/add-edit" class="btn btn-sm btn-primary mr-1" >Edit</a>
-                <button class="btn btn-sm btn-danger btn-delete-user" onclick="onDelete(employee.id)">
+                <a routerLink="/add-edit/{{employee._id}}" class="btn btn-sm btn-primary mr-1" >Edit</a>
+                <button class="btn btn-sm btn-danger btn-delete-user" (click)="onDelete(employee)">
                     <span >Delete</span>
                 </button>
             </td>

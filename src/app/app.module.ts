@@ -10,6 +10,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './auth/auth.module';
 import { HomeModule } from './home/home.module';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { HomeModule } from './home/home.module';
     HttpClientModule,
     BrowserAnimationsModule,
     AuthModule,
+    NgChartsModule,
     HomeModule
   ],
   providers: [],

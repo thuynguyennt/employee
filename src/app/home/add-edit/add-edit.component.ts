@@ -12,7 +12,7 @@ import { EmployeeService } from 'src/app/services/employee.service';
 export class AddEditComponent implements OnInit {
 
   addForm!: FormGroup;
-  employee: Employee = new Employee();
+  employee!: Employee ;
   submitted = false;
   isActive = false;
   id!: string;
@@ -23,8 +23,23 @@ export class AddEditComponent implements OnInit {
     private employeeService: EmployeeService) {}
 
   ngOnInit(): void {
+    this.employee = new Employee();
+    this.id = this.route.snapshot.params['_id'];
+    if (!this.id) {
+      this.isActive = true;
+    } 
 
-    this.id = this.route.snapshot.params['id'];
+    this.employeeService.getEmployee(this.id)
+    .subscribe((data:any) => {
+      this.employee = data.response;
+      this.addForm.patchValue({
+        name: this.employee.name,
+        designation: this.employee.designation,
+        email: this.employee.email,
+        phone: this.employee.phone,
+        age: this.employee.age,
+      });
+    })
 
     this.addForm = this.fb.group({
       name: new FormControl(this.employee.name, [
@@ -69,7 +84,7 @@ export class AddEditComponent implements OnInit {
   private createUser() {
     this.employeeService.storeEmployee(this.addForm.value).subscribe(res => {
       console.log(res);
-      // this.router.navigate(['/employees']);
+      this.router.navigate(['/employees']);
     })
   }
 
